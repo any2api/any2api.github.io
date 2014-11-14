@@ -26,4 +26,4 @@ request(readmeUrl, function(err, res, body) {
       if (err) return console.error('error:', err);
     });
   });
-})
+});
