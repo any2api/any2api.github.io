@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="any2api : Auto-generate containerized APIs for arbitrary executables">
+    <meta name="description" content="any2api - auto-generate containerized APIs for arbitrary executables">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -22,10 +22,10 @@
           <h2 id="project_tagline">Auto-generate containerized APIs for arbitrary executables</h2>
 
           <!--
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/any2api/any2api-cli/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/any2api/any2api-cli/tarball/master">Download this project as a tar.gz file</a>
-            </section>
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/any2api/any2api-cli/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/any2api/any2api-cli/tarball/master">Download this project as a tar.gz file</a>
+          </section>
           -->
         </header>
     </div>
@@ -33,85 +33,49 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2>
-<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
 
-<p>Install:</p>
-
+      <h2 id="getting-started">Getting started</h2>
+<p>Prerequisites:</p>
+<ul>
+<li>Node.js &gt;= 0.10</li>
+<li>Ruby (for Chef cookbook scanner)</li>
+</ul>
+<p>Install any2api-cli using npm:</p>
 <pre><code>npm install any2api-cli -g
-</code></pre>
-
-<p>Show help:</p>
-
+</code></pre><p>Show help:</p>
 <pre><code>any2api --help
-</code></pre>
-
-<p>Scan Chef cookbook and generate API spec:</p>
-
-<pre><code>export COOKBOOK='mysql'
+</code></pre><p>Scan Chef cookbook and generate API spec:</p>
+<pre><code>export COOKBOOK=&#39;mysql&#39;
 any2api -o ./mysql-cb scan https://supermarket.getchef.com/cookbooks/$COOKBOOK/download
-</code></pre>
-
-<p>Generate API implementation:</p>
-
+</code></pre><p>Generate API implementation:</p>
 <pre><code>any2api -o ./mysql-api-impl gen ./mysql-cb
-</code></pre>
-
-<p>Prepare runtime for API implementation locally:</p>
-
+</code></pre><p>Prepare runtime for API implementation locally:</p>
 <pre><code>cd ./mysql-api-impl
 npm run prepare-runtime
-</code></pre>
-
-<p>Or build a Docker container to run the API implementation:</p>
-
+</code></pre><p>Or build a Docker container to run the API implementation:</p>
 <pre><code>cd ./mysql-api-impl
 docker build -t mysql-api-impl .
 docker run -ti mysql-api-impl bash
-</code></pre>
-
-<p>Test API implementation (locally or in container):</p>
-
+</code></pre><p>Test API implementation (locally or in container):</p>
 <pre><code>npm test
-</code></pre>
-
-<p>Start API implementation (locally or in container):</p>
-
+</code></pre><p>Start API implementation (locally or in container):</p>
 <pre><code>npm start
-</code></pre>
-
-<p>Or directly run the Docker container (background process):</p>
-
+</code></pre><p>Or directly run the Docker container (background process):</p>
 <pre><code>docker run -dP mysql-api-impl
-</code></pre>
-
-<h2>
-<a id="run-any2api-cli-inside-docker-container" class="anchor" href="#run-any2api-cli-inside-docker-container" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run any2api-cli inside Docker container</h2>
-
+</code></pre><h2 id="run-any2api-cli-inside-docker-container">Run any2api-cli inside Docker container</h2>
 <p>Instead of running any2api-cli locally, you can completely run it in a Docker container:</p>
-
 <pre><code>docker build -t any2api github.com/any2api/any2api-cli
 docker run -ti any2api
-</code></pre>
-
-<h2>
-<a id="available-modules" class="anchor" href="#available-modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available modules</h2>
-
-<p>You don't have to install the individual modules manually. When installing any2api-cli, all available modules are shipped automatically.</p>
-
-<h3>
-<a id="scanners" class="anchor" href="#scanners" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scanners</h3>
-
+</code></pre><h2 id="available-modules">Available modules</h2>
+<p>You don&#39;t have to install the individual modules manually. When installing any2api-cli, all available modules are shipped automatically.</p>
+<h3 id="scanners">Scanners</h3>
 <ul>
 <li><a href="https://github.com/any2api/any2api-scanner-chef">Chef cookbook scanner</a></li>
 <li><a href="https://github.com/any2api/any2api-scanner-juju">Juju charm scanner</a></li>
 <li>Docker scanner (planned)</li>
 <li>...</li>
 </ul>
-
-<h3>
-<a id="invokers" class="anchor" href="#invokers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Invokers</h3>
-
+<h3 id="invokers">Invokers</h3>
 <ul>
 <li><a href="https://github.com/any2api/any2api-invoker-chef">Chef cookbook invoker</a></li>
 <li>Juju charm invoker (to be available soon)</li>
@@ -121,16 +85,15 @@ docker run -ti any2api
 <li>Python invoker (planned)</li>
 <li>...</li>
 </ul>
-
-<h3>
-<a id="generators" class="anchor" href="#generators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generators</h3>
-
+<h3 id="generators">Generators</h3>
 <ul>
 <li><a href="https://github.com/any2api/any2api-generator-rest">REST API generator</a></li>
 <li>JSON-RPC API generator (to be available soon)</li>
 <li>WSDL/SOAP API generator (planned)</li>
 <li>...</li>
 </ul>
+
+
       </section>
     </div>
 
@@ -138,21 +101,20 @@ docker run -ti any2api
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         <!-- <p class="copyright">any2api maintained by <a href="https://github.com/any2api">any2api</a></p> -->
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> | any2api</p>
       </footer>
     </div>
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-56724220-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-56724220-1");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
 
   </body>
 </html>
