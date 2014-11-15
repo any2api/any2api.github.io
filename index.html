@@ -42,6 +42,10 @@
 </ul>
 <p>Install any2api-cli using npm:</p>
 <pre><code>npm install any2api-cli -g
+</code></pre><p>Install all available modules:</p>
+<pre><code>any2api install scanner all
+any2api install invoker all
+any2api install generator all
 </code></pre><p>Show help:</p>
 <pre><code>any2api --help
 </code></pre><p>Scan Chef cookbook and generate API spec:</p>
@@ -67,7 +71,6 @@ docker run -ti mysql-api-impl bash
 <pre><code>docker build -t any2api github.com/any2api/any2api-cli
 docker run -ti any2api
 </code></pre><h2 id="available-modules">Available modules</h2>
-<p>You don&#39;t have to install the individual modules manually. When installing any2api-cli, all available modules are shipped automatically.</p>
 <h3 id="scanners">Scanners</h3>
 <ul>
 <li><a href="https://github.com/any2api/any2api-scanner-chef">Chef cookbook scanner</a></li>
