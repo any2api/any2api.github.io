@@ -72,9 +72,11 @@ docker run -ti mysql-api-impl bash
 <pre><code>docker run -dP mysql-api-impl
 </code></pre><p>The container is now running as a background process.</p>
 <h2 id="run-any2api-cli-inside-docker-container">Run any2api-cli inside Docker container</h2>
-<p>Instead of running any2api-cli locally, you can run it in a Docker container:</p>
-<pre><code>docker build -t any2api github.com/any2api/any2api-cli
-docker run -ti any2api
+<p>Instead of running any2api-cli locally, you can run it in a Docker container (prebuilt):</p>
+<pre><code>docker run -ti any2api/any2api-cli
+</code></pre><p>Alternatively, you may build a fresh container and run it:</p>
+<pre><code>docker build -t any2api/any2api-cli github.com/any2api/any2api-cli
+docker run -ti any2api/any2api-cli
 </code></pre><p>With this everything runs safely in an isolated container.</p>
 <h2 id="available-modules">Available modules</h2>
 <h3 id="scanners">Scanners</h3>
