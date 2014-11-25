@@ -46,10 +46,10 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
 
-      <h2 id="about">About</h2>
+      <h2>About</h2>
 <p>Use <strong>any2api</strong> to wrap arbitrary executables (scripts, Chef cookbooks, Juju charms, compiled programs, etc.) by auto-generating containerized API implementations. This is to ease integration and orchestration of different kinds of executables, e.g., to implement fully automated deployment processes.</p>
-<p>It&#39;s a fully modular and extensible framework. Modules are shipped as <a href="https://www.npmjs.org/browse/keyword/any2api">Node modules</a>, but not all of them have to be implemented in JavaScript/Node. Currently, <a href="https://github.com/any2api/any2api-cli">any2api-cli</a> provides a command-line interface; a web-based user interface is planned.</p>
-<h2 id="getting-started">Getting started</h2>
+<p>It's a fully modular and extensible framework. Modules are shipped as <a href="https://www.npmjs.org/browse/keyword/any2api">Node modules</a>, but not all of them have to be implemented in JavaScript/Node. Currently, <a href="https://github.com/any2api/any2api-cli">any2api-cli</a> provides a command-line interface; a web-based user interface is planned.</p>
+<h2>Getting started</h2>
 <p>Prerequisites:</p>
 <ul>
 <li>Node.js &gt;= 0.10</li>
@@ -58,47 +58,59 @@
 </ul>
 <p>Install any2api-cli using npm:</p>
 <pre><code>npm install any2api-cli -g
-</code></pre><p>Install all available modules, i.e., scanners, invokers, and generators:</p>
+</code></pre>
+<p>Install all available modules, i.e., scanners, invokers, and generators:</p>
 <pre><code>any2api install scanner all
 any2api install invoker all
 any2api install generator all
-</code></pre><p>Show help:</p>
+</code></pre>
+<p>Show help:</p>
 <pre><code>any2api --help
-</code></pre><p>Scan Chef cookbook and generate API spec:</p>
-<pre><code>export COOKBOOK=&#39;mysql&#39;
+</code></pre>
+<p>Scan Chef cookbook and generate API spec:</p>
+<pre><code>export COOKBOOK='mysql'
 any2api -o ./mysql-cb scan https://supermarket.getchef.com/cookbooks/$COOKBOOK/download
-</code></pre><p>Generate API implementation:</p>
+</code></pre>
+<p>Generate API implementation:</p>
 <pre><code>any2api -o ./mysql-api-impl gen ./mysql-cb
-</code></pre><p>Prepare runtime for API implementation locally:</p>
+</code></pre>
+<p>Prepare runtime for API implementation locally:</p>
 <pre><code>cd ./mysql-api-impl
 npm run prepare-runtime
-</code></pre><p>Or build a Docker container to run the API implementation:</p>
+</code></pre>
+<p>Or build a Docker container to run the API implementation:</p>
 <pre><code>cd ./mysql-api-impl
 docker build -t mysql-api-impl .
 docker run -ti mysql-api-impl bash
-</code></pre><p>Test API implementation (locally or in container):</p>
+</code></pre>
+<p>Test API implementation (locally or in container):</p>
 <pre><code>npm test
-</code></pre><p>Start API implementation (locally or in container):</p>
+</code></pre>
+<p>Start API implementation (locally or in container):</p>
 <pre><code>npm start
-</code></pre><p>Or directly run the Docker container:</p>
+</code></pre>
+<p>Or directly run the Docker container:</p>
 <pre><code>docker run -dP mysql-api-impl
-</code></pre><p>The container is now running as a background process.</p>
-<h2 id="run-any2api-cli-inside-docker-container">Run any2api-cli inside Docker container</h2>
+</code></pre>
+<p>The container is now running as a background process.</p>
+<h2>Run any2api-cli inside Docker container</h2>
 <p>Instead of running any2api-cli locally, you can run it in a Docker container (prebuilt):</p>
 <pre><code>docker run -ti any2api/any2api-cli
-</code></pre><p>Alternatively, you may build a fresh container and run it:</p>
+</code></pre>
+<p>Alternatively, you may build a fresh container and run it:</p>
 <pre><code>docker build -t any2api/any2api-cli github.com/any2api/any2api-cli
 docker run -ti any2api/any2api-cli
-</code></pre><p>With this everything runs safely in an isolated container.</p>
-<h2 id="available-modules">Available modules</h2>
-<h3 id="scanners">Scanners</h3>
+</code></pre>
+<p>With this everything runs safely in an isolated container.</p>
+<h2>Available modules</h2>
+<h3>Scanners</h3>
 <ul>
 <li><a href="https://github.com/any2api/any2api-scanner-chef">any2api-scanner-chef</a> - <em>scan Chef cookbooks</em></li>
 <li><a href="https://github.com/any2api/any2api-scanner-juju">any2api-scanner-juju</a> - <em>scan Juju charms</em></li>
 <li>any2api-scanner-docker - <em>scan Docker container images and Dockerfiles (planned)</em></li>
 <li>...</li>
 </ul>
-<h3 id="invokers">Invokers</h3>
+<h3>Invokers</h3>
 <ul>
 <li><a href="https://github.com/any2api/any2api-invoker-chef">any2api-invoker-chef</a> - <em>invoke Chef cookbooks</em></li>
 <li>any2api-invoker-juju - <em>invoke Juju charm (to be available soon)</em></li>
@@ -108,7 +120,7 @@ docker run -ti any2api/any2api-cli
 <li>any2api-invoker-python - <em>inviker Python scripts (planned)</em></li>
 <li>...</li>
 </ul>
-<h3 id="generators">Generators</h3>
+<h3>Generators</h3>
 <ul>
 <li><a href="https://github.com/any2api/any2api-generator-rest">any2api-generator-rest</a> - <em>generate REST API implementations based on Node.js or Java</em></li>
 <li>any2api-generator-jsonrpc - <em>generate JSON-RPC API implementations (to be available soon)</em></li>

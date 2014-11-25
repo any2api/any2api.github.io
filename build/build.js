@@ -1,7 +1,9 @@
-var marked = require('marked');
 var request = require('request');
 var fs = require('fs');
 var _ = require('lodash');
+var Remarkable = require('remarkable');
+
+var md = new Remarkable();
 
 var readmeUrl = 'https://raw.githubusercontent.com/any2api/any2api-cli/master/README.md';
 var tplPath = './index.tpl.html';
@@ -15,7 +17,7 @@ request(readmeUrl, function(err, res, body) {
     return;
   }
 
-  var html = marked(body);
+  var html = md.render(body);
 
   html = _.rest(html.split('\n'), 3).join('\n');
 
