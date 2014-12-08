@@ -54,7 +54,8 @@
 <ul>
 <li>Node.js &gt;= 0.10</li>
 <li>Ruby (for any2api-scanner-chef)</li>
-<li>Docker (optional, if you want to run generated APIs in a container)</li>
+<li>Optional: Docker (if you want to run generated APIs in a container)</li>
+<li>Optional: Vagrant (if you want to run generated APIs in a dedicated VM)</li>
 </ul>
 <p>Install any2api-cli using npm:</p>
 <pre><code>npm install any2api-cli -g
@@ -81,7 +82,7 @@ npm run prepare-runtime
 <p>Or build a Docker container to run the API implementation:</p>
 <pre><code>cd ./mysql-api-impl
 docker build -t mysql-api-impl .
-docker run -ti mysql-api-impl bash
+docker run -tiP mysql-api-impl bash
 </code></pre>
 <p>Test API implementation (locally or in container):</p>
 <pre><code>npm test
@@ -93,6 +94,10 @@ docker run -ti mysql-api-impl bash
 <pre><code>docker run -dP mysql-api-impl
 </code></pre>
 <p>The container is now running as a background process.</p>
+<p>Alternatively, you can use Vagrant:</p>
+<pre><code>vagrant up
+</code></pre>
+<p>The API implementation is now running in a dedicated virtual machine.</p>
 <h2>Run any2api-cli inside Docker container</h2>
 <p>Instead of running any2api-cli locally, you can run it in a Docker container (prebuilt):</p>
 <pre><code>docker run -ti any2api/any2api-cli
@@ -102,6 +107,12 @@ docker run -ti mysql-api-impl bash
 docker run -ti any2api/any2api-cli
 </code></pre>
 <p>With this everything runs safely in an isolated container.</p>
+<h2>Run any2api-cli using Vagrant</h2>
+<p>Yet another way to run any2api-cli is using Vagrant. After cloning the <a href="https://github.com/any2api/any2api-cli">any2api-cli</a> repository, run the following commands:</p>
+<pre><code>vagrant up
+vagrant ssh
+</code></pre>
+<p>From now everything runs safely in a dedicated virtual machine.</p>
 <h2>Available modules</h2>
 <h3>Scanners</h3>
 <ul>
