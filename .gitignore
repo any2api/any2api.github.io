@@ -4,6 +4,8 @@ _site
 .ruby-version
 .sass-cache
 Gemfile.lock
+*.pdf
+*.pptx
 
 # Numerous always-ignore extensions
 *.diff
