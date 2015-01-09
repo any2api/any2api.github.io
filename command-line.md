@@ -28,7 +28,7 @@ The available options and commands are shown in the following.
   <dd>Scan given executable(s) to produce an API spec. An executable is specified by a file path, a directory path, or a URL.</dd>
 
   <dt><code>gen &lt;apispec&gt;</code></dt>
-  <dd>Generate an API implementation for the given API spec. The API spec is specified by a file path (<code>apispec.json</code>) or a directory path (containing the <code>apispec.json</code> file).</dd>
+  <dd>Generate an API implementation for the given API spec. The API spec is specified by a file path or a directory path (containing an <code>apispec.json</code> file).</dd>
 </dl>
 
 
