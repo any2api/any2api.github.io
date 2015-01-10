@@ -61,7 +61,7 @@ The available options and commands are shown in the following.
   <dd>Skip preparing executables (e.g., downloading and packaging dependencies) when building an API implementation.</dd>
 
   <dt><code>-i, --interface &lt;interface&gt;</code></dt>
-  <dd>Select type of interface (e.g., <em>rest</em>).</dd>
+  <dd>Select kind of interface (e.g., <em>rest</em>).</dd>
 
   <dt><code>-t, --impl-type &lt;type&gt;</code></dt>
   <dd>Select type of API implementation (e.g., <em>node</em>).</dd>
