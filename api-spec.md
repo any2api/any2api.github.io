@@ -212,12 +212,12 @@ In the following the complete structure of an API spec is explained in detail.
     <tr>
       <td>parameters_schema.(name).<strong>json_schema</strong></td>
       <td>object</td>
-      <td>A JSON schema to specify the structure of the parameter value, if the parameter type is "json_object" or "json_array".</td>
+      <td>A JSON schema to specify the structure of the parameter value, if parameters_schema.(name).type is "json_object" or "json_array".</td>
     </tr>
     <tr>
       <td>results_schema.(name).<strong>xml_schema</strong></td>
       <td>string</td>
-      <td>An XML schema to specify the structure of the parameter value, if the parameter type is "xml_object".</td>
+      <td>An XML schema to specify the structure of the parameter value, if parameters_schema.(name).type is "xml_object".</td>
     </tr>
     <tr>
       <td><strong>parameters_required</strong></td>
@@ -257,12 +257,12 @@ In the following the complete structure of an API spec is explained in detail.
     <tr>
       <td>results_schema.(name).<strong>json_schema</strong></td>
       <td>object</td>
-      <td>A JSON schema to specify the structure of the result, if the parameter type is "json_object" or "json_array".</td>
+      <td>A JSON schema to specify the structure of the result, if results_schema.(name).type is "json_object" or "json_array".</td>
     </tr>
     <tr>
       <td>results_schema.(name).<strong>xml_schema</strong></td>
       <td>string</td>
-      <td>An XML schema to specify the structure of the result, if the parameter type is "xml_object".</td>
+      <td>An XML schema to specify the structure of the result, if results_schema.(name).type is "xml_object".</td>
     </tr>
   </tbody>
 </table>
