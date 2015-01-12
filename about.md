@@ -6,7 +6,7 @@ weight: 0
 
 *Auto-generate containerized APIs for arbitrary executables*
 
-* [What is any2api?](#what-is) &middot; [Why use any2api?](#why-use) &middot; [Use Cases](#use-cases)
+* [What is any2api?](#what-is) &ndash; [Why use any2api?](#why-use) &ndash; [Use Cases](#use-cases)
 * [Architecture and Design](#architecture)
 
 ----
