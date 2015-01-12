@@ -121,7 +121,8 @@ In the following the complete structure of an API spec is explained in detail.
           "description": string,
           "default":     any,
           "mapping":     any,
-          "properties":  object
+          "json_schema": object,
+          "xml_schema":  string
         }
       },
       "parameters_required": [
@@ -133,7 +134,8 @@ In the following the complete structure of an API spec is explained in detail.
           "description": string,
           "default":     any,
           "mapping":     any,
-          "properties":  object
+          "json_schema": object,
+          "xml_schema":  string
         }
       }
     }
@@ -208,9 +210,14 @@ In the following the complete structure of an API spec is explained in detail.
       <td>Mapping information for this parameter, i.e., how the parameter value is mapped at runtime (e.g., environment variable, stdin, file)</td>
     </tr>
     <tr>
-      <td>parameters_schema.(name).<strong>properties</strong></td>
+      <td>parameters_schema.(name).<strong>json_schema</strong></td>
       <td>object</td>
-      <td>A JSON schema to specify the structure of the parameter value, if the parameter type is "object".</td>
+      <td>A JSON schema to specify the structure of the parameter value, if the parameter type is "json_object" or "json_array".</td>
+    </tr>
+    <tr>
+      <td>results_schema.(name).<strong>xml_schema</strong></td>
+      <td>string</td>
+      <td>An XML schema to specify the structure of the parameter value, if the parameter type is "xml_object".</td>
     </tr>
     <tr>
       <td><strong>parameters_required</strong></td>
@@ -248,9 +255,14 @@ In the following the complete structure of an API spec is explained in detail.
       <td>Mapping information for this result, i.e., from where the result is read at runtime (e.g., stdout, stderr, file)</td>
     </tr>
     <tr>
-      <td>results_schema.(name).<strong>properties</strong></td>
+      <td>results_schema.(name).<strong>json_schema</strong></td>
       <td>object</td>
-      <td>A JSON schema to specify the structure of the result, if the result type is "object".</td>
+      <td>A JSON schema to specify the structure of the result, if the parameter type is "json_object" or "json_array".</td>
+    </tr>
+    <tr>
+      <td>results_schema.(name).<strong>xml_schema</strong></td>
+      <td>string</td>
+      <td>An XML schema to specify the structure of the result, if the parameter type is "xml_object".</td>
     </tr>
   </tbody>
 </table>
