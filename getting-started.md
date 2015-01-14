@@ -9,7 +9,7 @@ weight: 5
 
 Prerequisites:
 
-* Node.js >= 0.10
+* Node.js >= 0.10 (or io.js >= 1.0)
 * Ruby (for some scanners to produce better results)
 * Optional: Docker (if you want to run generated APIs in a container)
 * Optional: Vagrant (if you want to run generated APIs in a dedicated VM)
