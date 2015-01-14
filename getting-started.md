@@ -64,9 +64,7 @@ From now everything runs safely in a dedicated virtual machine.
 
 Scan Chef cookbook and generate API spec:
 
-    export COOKBOOK='mysql'
-    export VERSION='5.6.1'
-    any2api -o ./mysql-cb scan https://supermarket.chef.io/cookbooks/$COOKBOOK/versions/$VERSION/download
+    any2api -o ./mysql-cb scan https://supermarket.chef.io/cookbooks/mysql/versions/5.6.1/download
 
 Generate API implementation:
 
