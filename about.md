@@ -88,10 +88,10 @@ In the following a handful of key terms are explained in the context of the any2
   <dd>Anything that can be executed such as a code snippet or a script (e.g., Shell, Python, Ruby), a binary (e.g., compiled program), or a configuration definition (e.g., Chef cookbook). An executable typically expects inputs and produces outputs through different channels (files, command-line arguments, environment variables, stdin, stdout, etc.).</dd>
 
   <dt>Scanner</dt>
-  <dd>Specialized module to scan an executable, including its metadata (e.g., a Chef cookbook with its <code>metadata.json</code> file). Therefore, the input of a scanner is an executable, the output is an <a href="/api-spec">API spec</a>. Available scanners are listed on the <a href="/modules">modules page</a>.</dd>
+  <dd>Specialized module to scan an executable, including its metadata (e.g., a Chef cookbook with its <code>metadata.json</code> file). Therefore, the input of a scanner is an executable, the output is an <a href="/apispec">API spec</a>. Available scanners are listed on the <a href="/modules">modules page</a>.</dd>
 
   <dt>API Spec</dt>
-  <dd>Describes the interface (currently in JSON) of one or multiple executables, potentially different kinds of executables. Details are explained on the <a href="/api-spec">API spec page</a>.</dd>
+  <dd>Describes the interface (currently in JSON) of one or multiple executables, potentially different kinds of executables. Details are explained on the <a href="/apispec">API spec page</a>.</dd>
 
   <dt>Generator</dt>
   <dd>Specialized module to generate and package an <em>API implementation</em> for all executables described in the given <em>API spec</em>. Therefore, the input of a generator is an API spec, the output is an API implementation. Available generators are listed on the <a href="/modules">modules page</a>.</dd>
