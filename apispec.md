@@ -116,27 +116,13 @@ In the following the complete structure of an API spec is explained in detail.
       "invoker_name": string,
       "prepared":     boolean,
       "parameters_schema": {
-        (name): {
-          "type":        string,
-          "description": string,
-          "default":     any,
-          "mapping":     any,
-          "json_schema": object,
-          "xml_schema":  string
-        }
+        (name): Schema Definition Resource
       },
       "parameters_required": [
         string
       ],
       "results_schema": {
-        (name): {
-          "type":        string,
-          "description": string,
-          "default":     any,
-          "mapping":     any,
-          "json_schema": object,
-          "xml_schema":  string
-        }
+        (name): Schema Definition Resource
       }
     }
 
@@ -187,37 +173,7 @@ In the following the complete structure of an API spec is explained in detail.
     <tr>
       <td>parameters_schema.<strong>(name)</strong></td>
       <td>object</td>
-      <td>An individual, named parameter.</td>
-    </tr>
-    <tr>
-      <td>parameters_schema.(name).<strong>type</strong></td>
-      <td>string</td>
-      <td>Type of this parameter, i.e., "string", "number", "boolean", "xml_object", "json_object", or "json_array".</td>
-    </tr>
-    <tr>
-      <td>parameters_schema.(name).<strong>description</strong></td>
-      <td>string</td>
-      <td>Description of this parameter.</td>
-    </tr>
-    <tr>
-      <td>parameters_schema.(name).<strong>default</strong></td>
-      <td>any</td>
-      <td>Default value for this parameter.</td>
-    </tr>
-    <tr>
-      <td>parameters_schema.(name).<strong>mapping</strong></td>
-      <td>any</td>
-      <td>Mapping information for this parameter, i.e., how the parameter value is mapped at runtime (e.g., environment variable, stdin, file)</td>
-    </tr>
-    <tr>
-      <td>parameters_schema.(name).<strong>json_schema</strong></td>
-      <td>object</td>
-      <td>A JSON schema to specify the structure of the parameter value, if <em>parameters_schema.(name).type</em> is "json_object" or "json_array".</td>
-    </tr>
-    <tr>
-      <td>parameters_schema.(name).<strong>xml_schema</strong></td>
-      <td>string</td>
-      <td>An XML schema to specify the structure of the parameter value, if <em>parameters_schema.(name).type</em> is "xml_object".</td>
+      <td>Schema definition (specified as <a href="#schema-definition-resource">Schema Definition Resource</a>) for an individual, named parameter.</td>
     </tr>
     <tr>
       <td><strong>parameters_required</strong></td>
@@ -232,37 +188,7 @@ In the following the complete structure of an API spec is explained in detail.
     <tr>
       <td>results_schema.<strong>(name)</strong></td>
       <td>object</td>
-      <td>An individual, named result.</td>
-    </tr>
-    <tr>
-      <td>results_schema.(name).<strong>type</strong></td>
-      <td>string</td>
-      <td>Type of this result, i.e., "string", "number", "boolean", "xml_object", "json_object", or "json_array".</td>
-    </tr>
-    <tr>
-      <td>results_schema.(name).<strong>description</strong></td>
-      <td>string</td>
-      <td>Description of this result.</td>
-    </tr>
-    <tr>
-      <td>results_schema.(name).<strong>default</strong></td>
-      <td>any</td>
-      <td>Default value for this result.</td>
-    </tr>
-    <tr>
-      <td>results_schema.(name).<strong>mapping</strong></td>
-      <td>any</td>
-      <td>Mapping information for this result, i.e., from where the result is read at runtime (e.g., stdout, stderr, file)</td>
-    </tr>
-    <tr>
-      <td>results_schema.(name).<strong>json_schema</strong></td>
-      <td>object</td>
-      <td>A JSON schema to specify the structure of the result, if <em>results_schema.(name).type</em> is "json_object" or "json_array".</td>
-    </tr>
-    <tr>
-      <td>results_schema.(name).<strong>xml_schema</strong></td>
-      <td>string</td>
-      <td>An XML schema to specify the structure of the result, if <em>results_schema.(name).type</em> is "xml_object".</td>
+      <td>Schema definition (specified as <a href="#schema-definition-resource">Schema Definition Resource</a>) for an individual, named result.</td>
     </tr>
   </tbody>
 </table>
@@ -295,6 +221,62 @@ In the following the complete structure of an API spec is explained in detail.
       <td><strong>expose</strong></td>
       <td>boolean</td>
       <td>Indicates whether this invoker is exposed through the generated API to be used directly by providing custom executables at runtime in an ad-hoc manner.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<a name="schema-definition-resource"></a>
+## Schema Definition Resource
+
+    {
+      "type":        string,
+      "description": string,
+      "default":     any,
+      "mapping":     any,
+      "json_schema": object,
+      "xml_schema":  string
+    }
+
+<table>
+  <thead style="text-align: left;">
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody style="vertical-align: top;">
+    <tr>
+      <td><strong>type</strong></td>
+      <td>string</td>
+      <td>Type of the parameter or result, i.e., "string", "number", "boolean", "xml_object", "json_object", or "json_array".</td>
+    </tr>
+    <tr>
+      <td><strong>description</strong></td>
+      <td>string</td>
+      <td>Description of the parameter or result.</td>
+    </tr>
+    <tr>
+      <td><strong>default</strong></td>
+      <td>any</td>
+      <td>Default value of the parameter.</td>
+    </tr>
+    <tr>
+      <td><strong>mapping</strong></td>
+      <td>any</td>
+      <td>Mapping information for the parameter or result, i.e., how the parameter value is mapped at runtime (e.g., environment variable, stdin, file), or from where the result is read at runtime (e.g., stdout, stderr, file).</td>
+    </tr>
+    <tr>
+      <td><strong>json_schema</strong></td>
+      <td>object</td>
+      <td>A JSON schema to specify the structure of the parameter value or result, if <em>type</em> is "json_object" or "json_array".</td>
+    </tr>
+    <tr>
+      <td><strong>xml_schema</strong></td>
+      <td>string</td>
+      <td>An XML schema to specify the structure of the parameter value or result, if <em>type</em> is "xml_object".</td>
     </tr>
   </tbody>
 </table>
