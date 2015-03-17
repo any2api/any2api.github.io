@@ -153,7 +153,7 @@ In the following the complete structure of an API spec is explained in detail.
     <tr>
       <td><strong>readme_file</strong></td>
       <td>string</td>
-      <td>Relative path to a README file, e.g., "./docs/README.md".</td>
+      <td>README file path, relative to executable's <em>path</em>, e.g., "./docs/README.md".</td>
     </tr>
     <tr>
       <td><strong>invoker_name</strong></td>
