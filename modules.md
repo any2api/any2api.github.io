@@ -60,11 +60,11 @@ The following any2api modules (scanners, invokers, and generators) are available
   <dt><a href="https://github.com/any2api/any2api-generator-rest">any2api-generator-rest</a></dt>
   <dd>Generate REST API implementations based on Node.js or Java</dd>
 
+  <dt><a href="https://github.com/any2api/any2api-generator-soap">any2api-generator-soap</a></dt>
+  <dd>Generate SOAP/WSDL API implementations</dd>
+
   <dt>any2api-generator-jsonrpc (planned)</dt>
   <dd>Generate JSON-RPC API implementations</dd>
-
-  <dt>any2api-generator-soap (planned)</dt>
-  <dd>Generate WSDL/SOAP API implementations</dd>
 </dl>
 
 ...
