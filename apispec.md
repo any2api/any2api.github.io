@@ -252,12 +252,12 @@ In the following the complete structure of an API spec is explained in detail.
     <tr>
       <td><strong>type</strong></td>
       <td>string</td>
-      <td>Type of the parameter or result, i.e., "string", "number", "boolean", "xml_object", "json_object", "json_array", or "binary". Binary data is either represented natively as a collection of bytes (e.g., <a href="https://nodejs.org/api/buffer.html">buffers</a> or <a href="https://nodejs.org/api/stream.html">byte streams</a>) or as base64-encoded string.</td>
+      <td>Type of the parameter or result, i.e., "string", "number", "boolean", "xml_object", "json_object", "json_array", or "binary". Binary data is either represented natively as a collection of bytes (e.g., <a href="https://nodejs.org/api/buffer.html">buffers</a> or <a href="https://nodejs.org/api/stream.html">byte streams</a>) or as <a href="https://tools.ietf.org/html/rfc4648">Base64</a>-encoded string.</td>
     </tr>
     <tr>
       <td><strong>content_type</strong></td>
       <td>string</td>
-      <td>MIME type of the content, e.g., "text/plain; charset=utf-8".</td>
+      <td>MIME type of the parameter's or result's content, e.g., "text/plain; charset=utf-8".</td>
     </tr>
     <tr>
       <td><strong>description</strong></td>
