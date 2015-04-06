@@ -231,12 +231,13 @@ In the following the complete structure of an API spec is explained in detail.
 ## Schema Definition Resource
 
     {
-      "type":        string,
-      "description": string,
-      "default":     any,
-      "mapping":     any,
-      "json_schema": object,
-      "xml_schema":  string
+      "type":         string,
+      "content_type": string,
+      "description":  string,
+      "default":      any,
+      "mapping":      any,
+      "json_schema":  object,
+      "xml_schema":   string
     }
 
 <table>
@@ -252,6 +253,11 @@ In the following the complete structure of an API spec is explained in detail.
       <td><strong>type</strong></td>
       <td>string</td>
       <td>Type of the parameter or result, i.e., "string", "number", "boolean", "xml_object", "json_object", "json_array", or "binary". Binary data is either represented natively as a collection of bytes (e.g., <a href="https://nodejs.org/api/buffer.html">buffers</a> or <a href="https://nodejs.org/api/stream.html">byte streams</a>) or as base64-encoded string.</td>
+    </tr>
+    <tr>
+      <td><strong>content_type</strong></td>
+      <td>string</td>
+      <td>MIME type of the content, e.g., "text/plain; charset=utf-8".</td>
     </tr>
     <tr>
       <td><strong>description</strong></td>
