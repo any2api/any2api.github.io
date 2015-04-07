@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CLI & any2api server
+title: CLI & any2api Server
 weight: 15
 ---
 
