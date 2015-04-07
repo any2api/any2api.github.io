@@ -16,7 +16,7 @@ weight: 0
 
 The *any2api* framework lets you wrap arbitrary executables (scripts, Chef cookbooks, Juju charms, compiled programs, etc.) by auto-generating containerized and portable APIs. This is to ease integration and orchestration of different kinds of executables, e.g., to implement automated deployment processes on top of these executables.
 
-It's a fully modular and extensible *APIfication* framework. [Modules](/modules) are shipped as [npm modules](https://www.npmjs.org/browse/keyword/any2api), but not all of them have to be implemented in JavaScript/Node.js. Currently, [any2api-cli](https://github.com/any2api/any2api-cli) provides a [command-line](/command-line) interface; a web-based user interface is planned.
+It's a fully modular and extensible *APIfication* framework. [Modules](/modules) are shipped as [npm modules](https://www.npmjs.org/browse/keyword/any2api), but not all of them have to be implemented in JavaScript/Node.js. Currently, [any2api-cli](https://github.com/any2api/any2api-cli) provides a [command-line](/cli-server) interface; a web-based user interface is planned.
 
 
 <a name="why-use"></a>
@@ -72,7 +72,7 @@ An executable doesn't have to be a file or a code snippet. An existing API endpo
 <a name="architecture"></a>
 ## Architecture and Design
 
-The architecture and design of the any2api framework as well as the associated workflow are fairly simple. As shown in the following diagram (upper part), all user interactions are performed using a corresponding interface. The [command-line](/command-line) interface is the most powerful option. In addition, a web-based user interface is planned to further simplify the usage of the framework. All interfaces use the *core* and *util* modules to interact with available scanners, invokers, and generators. 
+The architecture and design of the any2api framework as well as the associated workflow are fairly simple. As shown in the following diagram (upper part), all user interactions are performed using a corresponding interface. The [command-line](/cli-server) interface is the most powerful option. In addition, a web-based user interface is planned to further simplify the usage of the framework. All interfaces use the *core* and *util* modules to interact with available scanners, invokers, and generators. 
 
 [![architecture](/public/architecture.png "Architecture overview of any2api")](/public/architecture.png)
 
