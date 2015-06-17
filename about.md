@@ -14,9 +14,9 @@ weight: 0
 <a name="what-is"></a>
 ## What is any2api?
 
-The *any2api* framework lets you wrap arbitrary executables (scripts, Chef cookbooks, Juju charms, compiled programs, etc.) by auto-generating containerized and portable APIs. This is to ease integration and orchestration of different kinds of executables, e.g., to implement automated deployment processes on top of these executables.
+The *any2api* framework lets you wrap arbitrary executables (scripts, Chef cookbooks, Juju charms, compiled programs, etc.) by auto-generating containerized and portable APIs. This is to ease integration and orchestration of different kinds of executables, for instance, to implement automated deployment processes on top of these executables.
 
-It's a fully modular and extensible *APIfication* framework. [Modules](/modules) are shipped as [npm modules](https://www.npmjs.org/browse/keyword/any2api), but not all of them have to be implemented in JavaScript/Node.js. Currently, [any2api-cli](https://github.com/any2api/any2api-cli) provides a [command-line](/cli-server) interface; a web-based user interface is planned.
+It's a fully modular and extensible *APIfication* framework. [Modules](/modules) are shipped as [npm modules](https://www.npmjs.org/browse/keyword/any2api), but they do not have to be implemented in JavaScript/Node.js. Pick your favorite language/technology to build great modules. Currently, [any2api-cli](https://github.com/any2api/any2api-cli) provides a [command-line](/cli-server) interface; a web-based user interface is planned.
 
 
 <a name="why-use"></a>
