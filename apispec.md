@@ -112,23 +112,23 @@ In the following the complete structure of an API spec is explained in detail.
 ## Executable Resource
 
 ``` plaintext
-    {
-      "type":         string,
-      "description":  string,
-      "path":         string,
-      "readme_file":  string,
-      "invoker_name": string,
-      "prepared":     boolean,
-      "parameters_schema": {
-        (name): Schema Definition Resource
-      },
-      "parameters_required": [
-        string
-      ],
-      "results_schema": {
-        (name): Schema Definition Resource
-      }
-    }
+{
+  "type":         string,
+  "description":  string,
+  "path":         string,
+  "readme_file":  string,
+  "invoker_name": string,
+  "prepared":     boolean,
+  "parameters_schema": {
+    (name): Schema Definition Resource
+  },
+  "parameters_required": [
+    string
+  ],
+  "results_schema": {
+    (name): Schema Definition Resource
+  }
+}
 ```
 
 <table>
