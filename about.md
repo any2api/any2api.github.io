@@ -12,6 +12,7 @@ weight: 0
 ----
 
 <a name="what-is"></a>
+
 ## What is any2api?
 
 The *any2api* framework lets you wrap arbitrary executables (scripts, Chef cookbooks, Juju charms, compiled programs, etc.) by auto-generating containerized and portable APIs. This is to ease integration and orchestration of different kinds of executables, for instance, to implement automated deployment processes on top of these executables.
@@ -20,6 +21,7 @@ It's a fully modular and extensible *APIfication* framework. [Modules](/modules)
 
 
 <a name="why-use"></a>
+
 ## Why use any2api?
 
 APIs are great to expose and utilize functionality programmatically. Especially language-agnostic APIs such as Web APIs (HTTP/REST and others) simplify the integration and orchestration of applications/components: completely different technology stacks could be used behind an API, without the API consumer having to consider the implementation details in the background. This is the idea of abstraction.
@@ -38,6 +40,7 @@ Finally, any2api packages generated API implementations in a portable, container
 
 
 <a name="use-cases"></a>
+
 ## Use Cases
 
 #### DevOps artifacts
@@ -70,6 +73,7 @@ An executable doesn't have to be a file or a code snippet. An existing API endpo
 
 
 <a name="architecture"></a>
+
 ## Architecture and Design
 
 The architecture and design of the any2api framework as well as the associated workflow are fairly simple. As shown in the following diagram (upper part), all user interactions are performed using a corresponding interface. The [command-line](/cli-server) interface is the most powerful option. In addition, a web-based user interface is planned to further simplify the usage of the framework. All interfaces use the *core* and *util* modules to interact with available scanners, invokers, and generators. 

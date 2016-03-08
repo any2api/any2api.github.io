@@ -1,11 +1,3 @@
-# Dependencies
-markdown:         kramdown #redcarpet
-highlighter:      rouge #pygments
-
-# Permalinks
-permalink:        pretty
-
-# Setup
 title:            any2api
 tagline:          'Auto-generate containerized APIs'
 description:      'Auto-generate containerized APIs for arbitrary executables'
@@ -16,4 +8,5 @@ author:
   name:           'Johannes Wettinger'
   url:            https://github.com/jojow
 
+permalink:        pretty
 paginate:         3

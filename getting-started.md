@@ -5,6 +5,7 @@ weight: 5
 ---
 
 <a name="any2api-cli-npm"></a>
+
 ## Install any2api-cli on your machine
 
 Prerequisites:
@@ -33,6 +34,7 @@ If you don't want to install any2api-cli locally on your machine, you can go wit
 
 
 <a name="any2api-cli-docker"></a>
+
 ### Alternative: Run any2api-cli inside Docker container
 
 Instead of running any2api-cli locally, you can run it in a Docker container (prebuilt):
@@ -50,6 +52,7 @@ From now everything runs safely in an isolated container.
 
 
 <a name="any2api-cli-vagrant"></a>
+
 ### Alternative: Run any2api-cli using Vagrant
 
 Yet another way to run any2api-cli is using Vagrant. After cloning the [any2api-cli](https://github.com/any2api/any2api-cli) repository, run the following commands:
@@ -63,6 +66,7 @@ From now everything runs safely in a dedicated virtual machine.
 
 
 <a name="generate"></a>
+
 ## Generate API implementation for a Chef cookbook
 
 Scan Chef cookbook and generate API spec:
