@@ -17,24 +17,26 @@ In the following the complete structure of an API spec is explained in detail.
 
 ## API Spec Structure
 
-    {
-      "executables": {
-        (name): Executable Resource
-      },
-      "invokers": {
-        (name): Invoker Resource
-      },
-      "implementation": {
-        "title":       string,
-        "description": string,
-        "path":        string,
-        "type":        string,
-        "interface":   string,
-        "ports": [
-          string
-        ]
-      }
-    }
+``` plaintext
+{
+  "executables": {
+    (name): Executable Resource
+  },
+  "invokers": {
+    (name): Invoker Resource
+  },
+  "implementation": {
+    "title":       string,
+    "description": string,
+    "path":        string,
+    "type":        string,
+    "interface":   string,
+    "ports": [
+      string
+    ]
+  }
+}
+```
 
 <table>
   <thead style="text-align: left;">
@@ -106,8 +108,10 @@ In the following the complete structure of an API spec is explained in detail.
 <hr />
 
 <a name="executable-resource"></a>
+
 ## Executable Resource
 
+``` plaintext
     {
       "type":         string,
       "description":  string,
@@ -125,6 +129,7 @@ In the following the complete structure of an API spec is explained in detail.
         (name): Schema Definition Resource
       }
     }
+```
 
 <table>
   <thead style="text-align: left;">
@@ -196,12 +201,15 @@ In the following the complete structure of an API spec is explained in detail.
 <hr />
 
 <a name="invoker-resource"></a>
+
 ## Invoker Resource
 
-    {
-      "path":   string,
-      "expose": boolean
-    }
+``` plaintext
+{
+  "path":   string,
+  "expose": boolean
+}
+```
 
 <table>
   <thead style="text-align: left;">
@@ -228,17 +236,20 @@ In the following the complete structure of an API spec is explained in detail.
 <hr />
 
 <a name="schema-definition-resource"></a>
+
 ## Schema Definition Resource
 
-    {
-      "type":         string,
-      "content_type": string,
-      "description":  string,
-      "default":      any,
-      "mapping":      any,
-      "json_schema":  object,
-      "xml_schema":   string
-    }
+``` plaintext
+{
+  "type":         string,
+  "content_type": string,
+  "description":  string,
+  "default":      any,
+  "mapping":      any,
+  "json_schema":  object,
+  "xml_schema":   string
+}
+```
 
 <table>
   <thead style="text-align: left;">

@@ -8,5 +8,13 @@ author:
   name:           'Johannes Wettinger'
   url:            https://github.com/jojow
 
+gems:
+- 'jekyll-paginate'
+
 permalink:        pretty
 paginate:         3
+paginate_path:    'page:num'
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
