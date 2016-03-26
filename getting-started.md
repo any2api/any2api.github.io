@@ -37,17 +37,11 @@ If you don't want to install any2api-cli locally on your machine, you can go wit
 
 ### Alternative: Run any2api-cli inside Docker container
 
-Instead of running any2api-cli locally, you can run it in a Docker container (prebuilt):
+Instead of running any2api-cli locally, you can run it in a Docker container:
 
-    docker run -ti any2api/any2api-cli
+    docker run any2api/cli --help
 
-Alternatively, you may build a fresh container and run it:
-
-    docker build -t any2api/any2api-cli github.com/any2api/any2api-cli
-    docker run -ti any2api/any2api-cli
-
-From now everything runs safely in an isolated container.
-**Caveat:** *With this approach you cannot run a generated API implementation in a separate container or virtual machine immediately from the container you are currently working in. Yes, there is a workaround to run containers in containers ([Docker-in-Docker](https://github.com/jpetazzo/dind)), but actually this is not necessary for reasons of isolation because you are running everything already in an isolated environment.*
+This makes any2api running in an isolated container.
 
 
 
@@ -61,7 +55,6 @@ Yet another way to run any2api-cli is using Vagrant. After cloning the [any2api-
     vagrant ssh
 
 From now everything runs safely in a dedicated virtual machine.
-**Caveat:** *With this approach you cannot immediately run a generated API implementation in a separate virtual machine immediately from the virtual machine you are currently working in. There are workarounds available, but performance issues may occur. However, this is not necessary for reasons of isolation because you are running everything already in an isolated environment.*
 
 
 
@@ -71,22 +64,22 @@ From now everything runs safely in a dedicated virtual machine.
 
 Scan Chef cookbook and generate API spec:
 
-    any2api -o ./mysql-cb scan https://supermarket.chef.io/cookbooks/mysql/versions/5.6.1/download
+    any2api -o ./mysql-cookbook scan https://supermarket.chef.io/cookbooks/mysql/versions/5.6.1/download
 
 Generate API implementation:
 
-    any2api -o ./mysql-api-impl gen ./mysql-cb
+    any2api -o ./mysql-api gen ./mysql-cookbook
 
 Prepare runtime for API implementation locally:
 
-    cd mysql-api-impl
+    cd mysql-api
     npm run prepare-runtime
     
 Or build a Docker container to run the API implementation:
 
-    cd mysql-api-impl
-    docker build -t mysql-api-impl .
-    docker run -tiP mysql-api-impl bash
+    cd mysql-api
+    docker build -t mysql-api .
+    docker run -tiP mysql-api bash
 
 
 
@@ -102,7 +95,7 @@ Start API implementation (locally or in container):
 
 Or directly run the Docker container:
 
-    docker run -dP mysql-api-impl
+    docker run -dP mysql-api
 
 The container is now running as a background process.
 
@@ -116,9 +109,9 @@ The API implementation is now running in a dedicated virtual machine.
 
 ## Share API implementation
 
-The directory `mysql-api-impl` contains the complete API implementation (self-contained), so you can easily store and share it as you wish. If you are using Docker, you can push the generated API implementation to [Docker Hub](https://hub.docker.com), so others can just pull the container and use it without knowing anything about any2api:
+The directory `mysql-api` contains the complete API implementation (self-contained), so you can easily store and share it as you wish. If you are using Docker, you can push the generated API implementation to [Docker Hub](https://hub.docker.com), so others can just pull the container and use it without knowing anything about any2api:
 
-    docker push <yourname>/mysql-api-impl
+    docker push <yourname>/mysql-api
 
 Or even better: you can use [automated builds](http://docs.docker.com/docker-hub/builds) by committing the API implementation to a GitHub or Bitbucket repository and linking it with Docker Hub. With each commit a fresh container image gets built on Docker Hub automatically. This approach also improves the transparency because users can easily check all the code of the generated API implementation before using it.
 
