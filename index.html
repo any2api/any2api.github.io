@@ -21,35 +21,20 @@ title: Home
 
 <hr />
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<h2>News</h2>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+<p><small>06 Aug 2016</small><br><a href="https://github.com/toscafy/toscafy/blob/master/test/smoketest-cli-wrap.sh" target="_blank">Example</a> how to generate a TOSCA node type from a Chef cookbook using <a href="https://github.com/toscafy/toscafy" target="_blank">toscafy</a> and expose its functionality through an any2api-generated REST API.</p>
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+<p><small>03 Aug 2016</small><br>any2api is now integrated with <a href="https://github.com/toscafy/toscafy" target="_blank">toscafy</a> to expose the functionality of lower-level TOSCA implementation artifacts through higher-level APIs.</p>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+<p><small>21 Mar 2016</small><br>Working on another e-science use case: exposing the functionality of Matlab scripts through SOAP APIs to implement a crash simulation scenario.</p>
+
+<p><small>07 Jan 2016</small><br>Our Docker image <a href="https://hub.docker.com/r/any2api/cli" target="_blank">any2api/cli</a> always provides the latest version of the any2api CLI. You can directly use it without installing any2api on your machine:<br><code>docker run any2api/cli --help</code></p>
+
+<p><small>18 Apr 2015</small><br>Binary parameters and results are supported, see <a href="/apispec">API spec</a>.</p>
+
+<p><small>24 Mar 2015</small><br>SOAP API generator available:<br><code>any2api install generator any2api-generator-soap</code></p>
+
+<p><small>16 Mar 2015</small><br>Working on an e-science use case for any2api: wrap a couple of plain old Fortran executables that implement a scientific simulation and expose their functionality through REST APIs.</p>
+
+<p><small>09 Jan 2015</small><br>New website is online.</p>
