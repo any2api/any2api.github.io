@@ -4,7 +4,7 @@ title: About
 weight: 0
 ---
 
-*Auto-generate containerized APIs for arbitrary executables*
+*Auto-generate containerized APIs for any executable*
 
 * [What is any2api?](#what-is) &ndash; [Why use any2api?](#why-use) &ndash; [Use Cases](#use-cases)
 * [Architecture and Design](#architecture)

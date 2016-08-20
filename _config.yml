@@ -1,6 +1,6 @@
 title:            any2api
 tagline:          'Auto-generate containerized APIs'
-description:      'Auto-generate containerized APIs for arbitrary executables'
+description:      'Auto-generate containerized APIs for any executable'
 url:              http://any2api.org
 baseurl:          /
 
