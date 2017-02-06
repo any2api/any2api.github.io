@@ -1,40 +1,233 @@
----
-layout: default
-title: Home
----
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-<h2>Quick start</h2>
+    <title>any2api - The better way to create awesome APIs.</title>
 
-<!-- <p class="message"></p> -->
+    <meta name="title" content="any2api">
+    <meta name="description" content="Turn any code/executable/thing into great APIs. REST, messaging, RPC, streaming, … API diversity! any2api open ecosystem of composable API bricks: Wrappers, Adapters, Plugins and more.">
 
-<p>
-  <strong><a href="/about">About any2api</a></strong> &ndash; Introduction, use cases, architecture and design
-  <br />
-  <strong><a href="/getting-started">Getting started</a></strong> &ndash; Learn how to install and use any2api
-</p>
+    <!-- homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="./img/any2api-logo-384.png">
 
-<hr />
+    <!-- homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="any2api">
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/any2api-logo-152.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/any2api-logo-240.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/any2api-logo-304.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/any2api-logo-360.png" />
 
-<p>
-  <a href="/about#architecture"><img src="/public/overview.png" alt="overview" title="Overview of any2api"></a>
-</p>
+    <link rel="shortcut icon" href="./img/any2api-logo-256.png">
+    <link rel="icon" href="./img/any2api-logo-256.png">
 
-<hr />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <style>
+      body {
+        font-family: 'Roboto', 'Helvetica', sans-serif;
+        background: #F5F5F5;
+      }
 
-<h2>News</h2>
+      a {
+        text-decoration: none;
+      }
 
-<p><small>06 Aug 2016</small><br><a href="https://github.com/toscafy/toscafy/blob/master/test/smoketest-cli-wrap.sh" target="_blank">Example</a> how to generate a TOSCA node type from a Chef cookbook using <a href="https://github.com/toscafy/toscafy" target="_blank">toscafy</a> and expose its functionality through an any2api-generated REST API.</p>
+      .grid-center {
+        max-width: 1000px;
+      }
 
-<p><small>03 Aug 2016</small><br>any2api is now integrated with <a href="https://github.com/toscafy/toscafy" target="_blank">toscafy</a> to expose the functionality of lower-level TOSCA implementation artifacts through higher-level APIs.</p>
+      .any2api {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: bold;
+      }
 
-<p><small>21 Mar 2016</small><br>Working on another e-science use case: exposing the functionality of Matlab scripts through SOAP APIs to implement a crash simulation scenario.</p>
+      #subtitle {
+        height: 40px;
+        animation-duration: 400ms;
+        -webkit-animation-duration: 400ms;
+        -moz-animation-duration: 400ms;
+      }
 
-<p><small>07 Jan 2016</small><br>Our Docker image <a href="https://hub.docker.com/r/any2api/cli" target="_blank">any2api/cli</a> always provides the latest version of the any2api CLI. You can directly use it without installing any2api on your machine:<br><code>docker run any2api/cli --help</code></p>
+      .cell-text {
+        text-align: center;
+      }
+      .cell-text > h2 {
+        color: #1A237E;
+      }
+      .cell-text > h4 {
+        font-family: 'Roboto Condensed', sans-serif;
+      }
 
-<p><small>18 Apr 2015</small><br>Binary parameters and results are supported, see <a href="/apispec">API spec</a>.</p>
+      .card-square {
+        width: 100%;
+        height: 320px;
+      }
 
-<p><small>24 Mar 2015</small><br>SOAP API generator available:<br><code>any2api install generator any2api-generator-soap</code></p>
+      .title-medium {
+        color: #FFFFFF;
+        background: url('./img/any2api-logo-256.png') top 10px left 10px no-repeat #1A237E;
+        background-size: 80px;
+      }
+      .title-spec {
+        color: #FFFFFF;
+        background: url('./img/any2api-spec-256.png') top 12px right 12px no-repeat #424242;
+        background-size: 100px;
+      }
+      .title-legacy {
+        color: #FFFFFF;
+        background: url('./img/any2api-legacy-256.png') top 30px center no-repeat #607D8B;
+        background-size: 80px;
+      }
+    </style>
+  </head>
 
-<p><small>16 Mar 2015</small><br>Working on an e-science use case for any2api: wrap a couple of plain old Fortran executables that implement a scientific simulation and expose their functionality through REST APIs.</p>
+  <body>
+    <div class="mdl-layout mdl-js-layout">
+      <main class="mdl-layout__content">
+        <!-- head -->
+        <div class="grid-center mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="cell-text mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <h2 class="any2api animated fadeInDown">
+              any<span style="font-size: 120%;">2</span>api
+            </h2>
+            <h4 id="subtitle" class="animated fadeInLeft">
+              The better way to create awesome APIs.
+            </h4>
+          </div>
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        </div>
 
-<p><small>09 Jan 2015</small><br>New website is online.</p>
+        <!-- cards -->
+        <div class="grid-center mdl-grid">
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+            <div class="card-square mdl-card mdl-shadow--2dp">
+              <div class="title-medium mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">
+                  medium.any2api.org
+                </h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                News on <span class="any2api">any2api.</span> Thoughts on API bricks, API development, DevOps and more.
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://medium.any2api.org" target="_blank">
+                  Go to Medium
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+            <div class="card-square mdl-card mdl-shadow--2dp">
+              <div class="title-spec mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">
+                  spec.any2api.org
+                </h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                Build API bricks such as wrappers and adapters. Based on gRPC and Docker.
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://spec.any2api.org" target="_blank">
+                  Go to Spec
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-cell--top">
+            <div class="card-square mdl-card mdl-shadow--2dp">
+              <div class="title-legacy mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">
+                  legacy.any2api.org
+                </h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                Initial research prototype that I developed during my PhD. Not maintained anymore.
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://legacy.any2api.org" target="_blank">
+                  Go to Legacy
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- foot -->
+        <div class="grid-center mdl-grid animated fadeInUp">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="cell-text mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <h4>
+              Stay in touch. Spread the word. Follow <span class="any2api">any2api</span>.
+            </h4>
+
+            <a class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect" href="https://twitter.com/@any2api" target="_blank">
+              Twitter
+            </a>
+            <a class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect" href="https://github.com/any2api" target="_blank">
+              GitHub
+            </a>
+            <a class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect" href="https://facebook.com/any2api" target="_blank" >
+              Facebook
+            </a>
+            <a class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect" href="https://plus.google.com/+any2apiOrgPage" target="_blank">
+              Google+
+            </a>
+          </div>
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="cell-text mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <hr>
+            <p>
+              Johannes Wettinger
+              <br>
+              <a href="https://twitter.com/@johannesw7r" target="_blank">@johannesw7r</a>
+            </p>
+          </div>
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        </div>
+      </main>
+    </div>
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+    <script>
+      var subtitles = [
+        'The better way to create awesome APIs.',
+        'Turn any code / executable / thing into great APIs.',
+        'REST, messaging, RPC, streaming, … API diversity!',
+        '🚀 Open ecosystem of composable API bricks.',
+        'API bricks: wrappers, adapters, plugins and more.'
+      ];
+
+      function updateSubtitle(text) {
+        var ev = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+        $('#subtitle').removeClass().addClass('fadeOutRight animated').one(ev, function() {
+          $(this).text(text).removeClass().addClass('fadeInLeft animated').one(ev, function() {
+            $(this).removeClass();
+          });
+        });
+      }
+
+      $(document).ready(function() {
+        var i = 0;
+
+        setInterval(function() {
+          if (i === subtitles.length-1) i = 0;
+          else i++;
+
+          updateSubtitle(subtitles[i]);
+        }, 6 * 1000)
+      });
+    </script>
+  </body>
+</html>
