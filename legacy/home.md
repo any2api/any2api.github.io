@@ -2,14 +2,15 @@
 
 ----
 
-# About
+# Home
+
+Auto-generate containerized APIs for any executable:
 
 [![overview](overview.png "Overview of any2api")](overview.png)
 
-Auto-generate containerized APIs for any executable.
+[What is any2api?](#what-is-any2api) &ndash; [Why use any2api?](#why-use-any2api) &ndash; [Use Cases](#use-cases)
 
-* [What is any2api?](#what-is-any2api) &ndash; [Why use any2api?](#why-use-any2api) &ndash; [Use Cases](#use-cases)
-* [Architecture and Design](#architecture-and-design)
+[Architecture and Design](#architecture-and-design)
 
 ----
 
