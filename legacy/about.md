@@ -1,4 +1,4 @@
-**Legacy, not maintained anymore. Check [any2api.org](http://any2api.org) for recent developments.**
+**⚠️ Legacy, not maintained anymore. Check [any2api.org](http://any2api.org) for recent developments. ⚠️**
 
 ----
 
@@ -17,7 +17,7 @@ Auto-generate containerized APIs for any executable.
 
 The *any2api* framework lets you wrap arbitrary executables (scripts, Chef cookbooks, Juju charms, compiled programs, etc.) by auto-generating containerized and portable APIs. This is to ease integration and orchestration of different kinds of executables, for instance, to implement automated deployment processes on top of these executables.
 
-It's a fully modular and extensible *APIfication* framework. [Modules](/modules) are shipped as [npm modules](https://www.npmjs.org/browse/keyword/any2api), but they do not have to be implemented in JavaScript/Node.js. Pick your favorite language/technology to build great modules. Currently, [any2api-cli](https://github.com/any2api/any2api-cli) provides a [command-line](/cli-server) interface; a web-based user interface is planned.
+It's a fully modular and extensible *APIfication* framework. [Modules](modules.md) are shipped as npm modules, but they do not have to be implemented in JavaScript/Node.js. Pick your favorite language/technology to build great modules. Currently, [any2api-cli](https://github.com/any2api/any2api-cli) provides a [command-line interface](cli.md); a web-based user interface is planned.
 
 
 
@@ -71,7 +71,7 @@ An executable doesn't have to be a file or a code snippet. An existing API endpo
 
 ## Architecture and Design
 
-The architecture and design of the any2api framework as well as the associated workflow are fairly simple. As shown in the following diagram (upper part), all user interactions are performed using a corresponding interface. The [command-line](/cli-server) interface is the most powerful option. In addition, a web-based user interface is planned to further simplify the usage of the framework. All interfaces use the *core* and *util* modules to interact with available scanners, invokers, and generators.
+The architecture and design of the any2api framework as well as the associated workflow are fairly simple. As shown in the following diagram (upper part), all user interactions are performed using a corresponding interface. The [command-line interface](cli.md) is the most powerful option. In addition, a web-based user interface is planned to further simplify the usage of the framework. All interfaces use the *core* and *util* modules to interact with available scanners, invokers, and generators.
 
 [![architecture](architecture.png "Architecture overview of any2api")](architecture.png)
 
@@ -84,15 +84,15 @@ In the following a handful of key terms are explained in the context of the any2
 
 * **Executable:** Anything that can be executed such as a code snippet or a script (e.g., Shell, Python, Ruby), a binary (e.g., compiled program), or a configuration definition (e.g., Chef cookbook). An executable typically expects inputs and produces outputs through different channels (files, command-line arguments, environment variables, stdin, stdout, etc.).
 
-* **Scanner:** Specialized module to scan an executable, including its metadata (e.g., a Chef cookbook with its <code>metadata.json</code> file). Therefore, the input of a scanner is an executable, the output is an <a href="/apispec">API spec</a>. Available scanners are listed on the <a href="/modules">modules page</a>.
+* **Scanner:** Specialized module to scan an executable, including its metadata (e.g., a Chef cookbook with its <code>metadata.json</code> file). Therefore, the input of a scanner is an executable, the output is an [API spec](apispec.md). Available scanners are listed on the [modules page](modules.md).
 
-* **API Spec:** Describes the interface (currently in JSON) of one or multiple executables, potentially different kinds of executables. Details are explained on the <a href="/apispec">API spec page</a>.
+* **API Spec:** Describes the interface (currently in JSON) of one or multiple executables, potentially different kinds of executables. Details are explained on the [API spec page](apispec.md).
 
-* **Generator:** Specialized module to generate and package an <em>API implementation</em> for all executables described in the given <em>API spec</em>. Therefore, the input of a generator is an API spec, the output is an API implementation. Available generators are listed on the <a href="/modules">modules page</a>.
+* **Generator:** Specialized module to generate and package an <em>API implementation</em> for all executables described in the given <em>API spec</em>. Therefore, the input of a generator is an API spec, the output is an API implementation. Available generators are listed on the [modules page](modules.md).
 
 * **API Implementation:** Self-contained, portable package containing the API spec, all executables described in the API spec, all required <em>invokers</em> and the generated implementation of the API endpoint.
 
-* **Invoker:** Specialized module to invoke a certain kind of executable (e.g., Ruby script, Java JAR file, Chef cookbook) at runtime. Invokers are packaged with the corresponding executables as part of an API implementation. Available invokers are listed on the <a href="/modules">modules page</a>.
+* **Invoker:** Specialized module to invoke a certain kind of executable (e.g., Ruby script, Java JAR file, Chef cookbook) at runtime. Invokers are packaged with the corresponding executables as part of an API implementation. Available invokers are listed on the [modules page](modules.md).
 
 
 
