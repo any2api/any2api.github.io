@@ -18,7 +18,14 @@ Auto-generate containerized APIs for any executable:
 
 The *any2api* framework lets you wrap arbitrary executables (scripts, Chef cookbooks, Juju charms, compiled programs, etc.) by auto-generating containerized and portable APIs. This is to ease integration and orchestration of different kinds of executables, for instance, to implement automated deployment processes on top of these executables.
 
-It's a fully modular and extensible *APIfication* framework. [Modules](modules.md) are shipped as npm modules, but they do not have to be implemented in JavaScript/Node.js. Pick your favorite language/technology to build great modules. Currently, [any2api-cli](https://github.com/any2api/any2api-cli) provides a [command-line interface](cli.md); a web-based user interface is planned.
+It's a fully modular and extensible *APIfication* framework. [Modules](modules.md) are shipped as npm modules, but they do not have to be implemented in JavaScript/Node.js. Pick your favorite language/technology to build great modules. Currently, [any2api-cli](https://github.com/any2api/any2api-cli) provides a [command-line interface](cli.md).
+
+The initial prototype of any2api is discussed in several research publications:
+
+* Wettinger et al.: Any2API - Automated APIfication. Proceedings of the 5th International Conference on Cloud Computing and Services Science (CLOSER 2015).
+* Wettinger et al.: Streamlining APIfication by Generating APIs for Diverse Executables Using Any2API. Cloud Computing and Services Science, Springer International Publishing, 2016.
+* Wettinger et al.: DynTail - Dynamically Tailored Deployment Engines for Cloud Applications. Proceedings of the 8th International Conference on Cloud Computing (IEEE CLOUD 2015).
+* Sungur et al.: Executing Informal Processes. Proceedings of the 17th International Conference on Information Integration and Web-based Applications & Services (iiWAS 2015).
 
 
 
