@@ -2,7 +2,7 @@
 
 ----
 
-# Getting Started
+# Getting started
 
 ## Install any2api-cli on your machine
 
@@ -35,7 +35,7 @@ If you don't want to install any2api-cli locally on your machine, you can go wit
 
 Instead of running any2api-cli locally, you can run it in a Docker container:
 
-    docker run any2api/cli --help
+    docker run any2api/cli:legacy --help
 
 This makes any2api running in an isolated container.
 
