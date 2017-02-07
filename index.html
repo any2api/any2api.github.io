@@ -224,6 +224,8 @@
         'API bricks: wrappers, adapters, <br class="rwd-break">plugins and more.'
       ];
 
+      var duration = 6 * 1000;
+
       function updateSubtitle(subtitle) {
         var ev = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
@@ -242,7 +244,7 @@
           else i++;
 
           updateSubtitle(subtitles[i]);
-        }, 6 * 1000)
+        }, duration)
       });
     </script>
   </body>
